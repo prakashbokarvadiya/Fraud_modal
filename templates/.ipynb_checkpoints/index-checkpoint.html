@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection</title>
+</head>
+<body>
+    <h2>Fraud Detection Form</h2>
+    <form method="post" action="/predict">
+        Step: <input type="number" name="step"><br>
+        Amount: <input type="number" step="0.01" name="amount"><br>
+        Old Balance Orig: <input type="number" step="0.01" name="oldbalanceOrg"><br>
+        New Balance Orig: <input type="number" step="0.01" name="newbalanceOrig"><br>
+        Old Balance Dest: <input type="number" step="0.01" name="oldbalanceDest"><br>
+        New Balance Dest: <input type="number" step="0.01" name="newbalanceDest"><br>
+        Type:
+        <select name="type">
+            <option value="PAYMENT">PAYMENT</option>
+            <option value="TRANSFER">TRANSFER</option>
+            <option value="CASH_OUT">CASH_OUT</option>
+            <option value="CASH_IN">CASH_IN</option>
+            <option value="DEBIT">DEBIT</option>
+        </select><br><br>
+        <button type="submit">Check Fraud</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
