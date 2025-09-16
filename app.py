@@ -37,6 +37,8 @@ def predict():
     return render_template("index.html", prediction=result)
 
 
+
+
 if __name__ == "__main__":
-    # use_reloader=False prevents Jupyter SystemExit error
-    app.run(debug=True, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))  # Render ka PORT use kare
+    app.run(host="0.0.0.0", port=port, debug=True)
