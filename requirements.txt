@@ -1,5 +1,5 @@
 flask==3.0.3
-scikit-learn==1.2.2
+scikit-learn==1.2.2 --only-binary=:all:
 joblib
 pandas
 numpy
